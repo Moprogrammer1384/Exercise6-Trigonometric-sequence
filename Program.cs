@@ -5,22 +5,49 @@
 //***********************************
 while (true)
 {
-    Console.Write("Please enter the trigonometric sequence: ");
-    string Input = Console.ReadLine();
-    int Number;
-    if (IsInt(Input))
+    int StartNumber = 0;
+    int EndNumber = 0;
+
+    while (true)
     {
-        Number = Convert.ToInt32(Input);
+        Console.Write("Please enter the start number of trigonometric sequence: ");
+        string Input = Console.ReadLine();
+        if (IsInt(Input))
+        {
+            StartNumber = Convert.ToInt32(Input);
+            break;
+        }
+        else
+        {
+            Console.WriteLine("Please enter a correct number !!!");
+            continue;
+        }
     }
-    else
+
+    while (true)
     {
-        Console.WriteLine("Please enter a correct number!!!!!");
-        continue;
+        Console.Write("Please enter the end number of trigonometric sequence: ");
+        string Input = Console.ReadLine();
+        if (IsInt(Input))
+        {
+            EndNumber = Convert.ToInt32(Input);
+            break;
+        }
+        else
+        {
+            Console.WriteLine("Please enter a correct number !!!");
+            continue;
+        }
     }
-    int Result = (Number * (Number + 1)) / 2;
-    Console.WriteLine(Result);
+
+    for (int i = StartNumber; i <= EndNumber; i++)
+    {
+        Console.Write($"{(i * (i + 1)) / 2}  ");
+    }
+
+    Console.WriteLine();
     Console.Write("Do you want to continue?if yes enter (y): ");
-    if(Console.ReadLine() == "y")
+    if (Console.ReadLine() == "y")
     {
         continue;
     }
